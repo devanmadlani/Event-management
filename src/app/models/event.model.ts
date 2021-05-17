@@ -27,14 +27,14 @@ export interface EventDetails {
 export interface SubscribedEventDetails {
   eventDetails: EventDetails;
   name: string;
-  gender: 'male' | 'female' | 'others';
+  gender: string;
   email: string;
   cityName: string;
 }
 
 export interface UserDetails {
   name: string;
-  gender: 'male' | 'female' | 'others';
+  gender: string;
   email: string;
   cityName: string;
 }

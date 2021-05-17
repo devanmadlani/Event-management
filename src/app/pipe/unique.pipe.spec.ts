@@ -11,7 +11,6 @@ describe('PhoneNumberPipe Tests', () => {
   describe('default behavior', () => {
     it('should transform array to unique list', () => {
       const transformedArray = uniquePipe.transform(eventsMock);
-      console.log(transformedArray);
       expect(transformedArray.length).toBe(3);
     });
   });

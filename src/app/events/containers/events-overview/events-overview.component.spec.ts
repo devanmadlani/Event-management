@@ -84,5 +84,19 @@ describe('EventsOverviewComponent', () => {
     expect(component.allEvents.length).toBe(1);
   });
 
+  it('should sort events by name', () => {
+    component.filterValue = eventsMock;
+    component.sortOrder = true;
+    component.sortData();
+    expect(component.allEvents[0].id).toBe('MAR2021032510');
+  });
+
+  it('should sort events by date', () => {
+    component.filterValue = eventsMock;
+    component.sortByDate = true;
+    component.sortDataByDate();
+    expect(component.allEvents[0].id).toBe('MAR2021032510');
+  });
+
 
 });

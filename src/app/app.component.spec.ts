@@ -46,8 +46,8 @@ describe('AppComponent', () => {
 
 
   it('should navigate to subscription form on subscribe', () => {
-    const spySubscribeToEvent = spyOn(component.router, 'navigate');
+    const spySubscribeToEvent = spyOn(component.router, 'navigateByUrl');
     component.showSubscribedEventList();
-    expect(spySubscribeToEvent).toHaveBeenCalledWith(['/subscribed-event']);
+    expect(spySubscribeToEvent).toHaveBeenCalledWith('/subscribed-event');
   });
 });
