@@ -54,7 +54,6 @@ Run ng test to execute the unit tests via Karma ng test watch to watch the chang
 # Can be improved
 
 Add more unit test for Html
-
 Notifications
 
 
