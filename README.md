@@ -61,8 +61,14 @@ Improve Notifications
 
 # e2e testing 
  
-![alt text](https://github.com/devanmadlani/Event-management/blob/main/src/assets/automation.gif?raw=true)
+![alt e2e testing](https://github.com/devanmadlani/Event-management/blob/main/src/assets/automation.gif?raw=true)
 
+
+# Unit testing coverage report
+
+![alt Unit testing coverage report](https://github.com/devanmadlani/Event-management/blob/main/src/assets/unit-testing-report.png?raw=true)
+
+![alt Unit testing coverage report](https://github.com/devanmadlani/Event-management/blob/main/src/assets/Unit-testing.png?raw=true)
 
 
 
