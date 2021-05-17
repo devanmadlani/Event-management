@@ -1,0 +1,32 @@
+<div class="mini-event" *ngIf="eventService.allSubscribedEvents | async as eventDetials">
+    <mat-card *ngIf="eventDetials.length > 0" class="card-container">
+        <div class="mini-product-card" *ngFor="let event of eventDetials">
+            <div class="event-image-container">
+<!--                <img class="event-image" alt="" [src]="product.image.srcOut">-->
+              <button mat-icon-button (click)="removeFromevent(event.eventDetails)"  color="warn" class="delete-event-button">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <div class="card-container">
+                <div class="card-desc">
+                  <div>{{event.eventDetails.category}}</div>
+                  <div class="sub-title">{{event.eventDetails.name}}</div>
+                  <div class="sub-title">{{event.eventDetails.description}}</div>
+                  <div class="sub-title">{{event.eventDetails.category}}</div>
+                  <div class="sub-title">{{event.eventDetails.eventDate}}</div>
+                </div>
+              <div class="user-details">
+                  <div>Attendee Deails</div>
+                  <div class="sub-title">{{event.name}}</div>
+                  <div class="sub-title__gender">{{event.gender}}</div>
+                  <div class="sub-title">{{event.email}}</div>
+                  <div class="sub-title">{{event.cityName}}</div>
+              </div>
+            </div>
+
+        </div>
+    </mat-card>
+    <div *ngIf="eventDetials.length === 0" class="empty-event-title">
+        You have no events subscribed
+    </div>
+</div>

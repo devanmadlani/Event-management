@@ -1,0 +1,39 @@
+@media (min-width: 768px) {
+  .desktop-content {
+    //width: 70%;
+    //margin: 0 auto;
+  }
+}
+.subscription-form {
+  margin-top: 24px;
+  padding: 25px;
+  @media (min-width:1025px) {
+    display: flex;
+  }
+  .event-details {
+    //padding: 50px;
+    @media (min-width:1025px) {
+      padding: 100px;
+      width: 40%;
+      min-height: 400px;
+      border-right: 1px solid #eee;
+    }
+  }
+  .event-subscription-form {
+    padding-top: 24px;
+    @media (min-width:1025px) {
+      width: 50%;
+      padding-left: 24px;
+    }
+  }
+  .gender-label {
+    padding-left: 10px;
+  }
+  .mat-icon {
+    font-size: 15px;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}

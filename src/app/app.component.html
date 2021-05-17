@@ -1,0 +1,19 @@
+<div class="navbar navbar-fixed-top navbar-light bg-light">
+  <div class="navbar-header pull-left">
+    <a class="navbar-brand" href="#">Event Planner</a>
+  </div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <div class="navbar-header pull-right">
+    <button type="button" class="btn notifications btn-outline-primary" (click)="showSubscribedEventList()">
+      Events Subscribed
+      <span class="badge">{{eventCount}}</span>
+    </button>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

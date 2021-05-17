@@ -1,0 +1,19 @@
+
+<div class="product-card">
+  <div>
+    <div>
+      <div class="product-det product-title">{{eventDetails?.name}}</div>
+      <div class="product-det amount-title">{{eventDetails?.category}}</div>
+      <div class="product-det amount-title"><mat-icon aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon>{{eventDetails?.eventDate | date:'medium'}}</div>
+    </div>
+    <div class="spinner-sucess-block">
+      <span [class.sucess-add-cart]="isSucessButton" [class.sucess-add-cart-hide]="!isSucessButton">sucess</span>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-primary subscribe-button"  (click)="subscribeToEvent(eventDetails)" (click)="save()" *ngIf="!eventDetails?.isSubscribed">
+  Subscribe
+  </button>
+  <button type="button" class="btn btn-danger"  (click)="unsubscribeEvent(eventDetails)" (click)="save()" *ngIf="eventDetails?.isSubscribed">
+    Unsubscribe
+  </button>
+</div>

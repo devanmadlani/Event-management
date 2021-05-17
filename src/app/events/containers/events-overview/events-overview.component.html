@@ -1,0 +1,42 @@
+<div class="desktop-content product-list">
+  <div class="event-filter filter-main">
+    <div class="event-filter__block">
+      <input type="text" class="form-control" placeholder="Search Event" (keyup)="filterByText($event.target.value)">
+    </div>
+    <div class="event-filter__block">
+      <div class="dropdown-filter">
+        <select class="custom-select" (change)="filterByCategory($event)">
+          <option value="">Choose Filter By Category</option>
+          <option *ngFor="let eventDetail of filterValue | unique"
+                  [ngValue]="eventDetail.category">{{eventDetail.category}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="event-filter__block">
+      <input type="text"
+             placeholder="Datepicker"
+             class="form-control"
+             bsDatepicker
+             [daysDisabled]="[6,0]"
+             (ngModelChange)="filterByDate($event)"
+             [(ngModel)]="filterDate"
+             [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
+    </div>
+  </div>
+  <div class="event-filter">
+    <div class="event-filter__block btn-block" (click)="sortDataByDate()">
+      <div>Date</div>
+    </div>
+    <div class="event-filter__block" (click)="sortData()">
+      A/Z
+    </div>
+  </div>
+
+
+  <div class="grid">
+    <div class="grid-div" *ngFor="let event of allEvents">
+      <app-event-card (subscribeEventClisk)="subscribeToEvent($event)"
+                      (unsubscribeEventClisk)="unsubscribeToEvent($event)" [eventDetails]="event"></app-event-card>
+    </div>
+  </div>
+</div>

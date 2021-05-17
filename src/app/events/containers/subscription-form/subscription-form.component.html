@@ -1,0 +1,85 @@
+<div class="subscription-form desktop-content">
+  <div class="event-details">
+    <h1>{{selectedEventDetails.name}}</h1>
+    <p>{{selectedEventDetails.category}}</p>
+    <p>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon>
+      {{selectedEventDetails.eventDate | date:'medium'}}</p>
+    <p>{{selectedEventDetails.description}}</p>
+  </div>
+  <div class="event-subscription-form">
+    <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Name:</label>
+        <input type="email" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name">
+        <span class="text-danger"
+              *ngIf="(userDetailsForm.controls.name.touched || submitted) && userDetailsForm.controls.name.errors?.required">
+                                <sup>*</sup>Name is required
+                            </span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+               formControlName="email">
+        <span class="text-danger"
+              *ngIf="(userDetailsForm.controls.email.touched || submitted) && userDetailsForm.controls.email.errors?.required">
+                                <sup>*</sup>Email is required
+                            </span>
+        <span class="text-danger"
+              *ngIf="userDetailsForm.controls.email.touched && userDetailsForm.controls.email.errors?.email">
+                                <sup>*</sup>Enter a valid email address
+                            </span>
+      </div>
+      <div class="form-group">
+        <label for="email">Date of Birth:</label>
+        <input type="text"
+               placeholder="Datepicker"
+               class="form-control"
+               bsDatepicker
+               [bsValue]="bsValue"
+               [daysDisabled]="[6,0]"
+               formControlName="dateOfBirth"
+               [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
+        <span class="text-danger"
+              *ngIf="(userDetailsForm.controls.dateOfBirth.touched || submitted) && userDetailsForm.controls.dateOfBirth.errors?.required">
+                                <sup>*</sup>Date of Birth is required
+                            </span>
+      </div>
+      <div class="form-group">
+        <label>Gender:</label>
+        <div>
+          <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+          <label class="gender-label"> Male</label>
+        </div>
+
+        <div>
+          <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+          <label class="gender-label"> Female</label>
+        </div>
+        <div>
+          <input id="others" type="radio" value="others" name="gender" formControlName="gender">
+          <label class="gender-label"> Others</label>
+        </div>
+        <span class="text-danger"
+              *ngIf="(userDetailsForm.controls.gender.touched || submitted) && userDetailsForm.controls.gender.errors?.required">
+                                         <sup>*</sup>Gender is required
+                                      </span>
+
+      </div>
+      <div class="form-group">
+        <div class="mb-3">
+          <label for="email">City:</label>
+          <select class="custom-select" formControlName="cityName">
+            <option value="">Choose your city</option>
+            <option *ngFor="let city of cityArr" [ngValue]="city">{{city}}</option>
+          </select>
+          <div class="text-danger"
+               *ngIf="(userDetailsForm.controls.cityName.touched || submitted) && userDetailsForm.controls.cityName.errors?.required">
+            <sup>*</sup>Please enter your city name
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+  </div>
+</div>

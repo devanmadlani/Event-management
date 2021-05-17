@@ -1,0 +1,114 @@
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/theming";
+@include mat-core();
+
+$my-theme-primary: mat-palette($mat-amber, 600);
+$my-theme-accent: mat-palette($mat-light-blue);
+$my-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+:root {
+  --subtitle: rgba(0, 0, 0, 0.54);
+  --main-background: #131921;
+  --background-light: #232f3e;
+  --grey: #f0f3f3;
+  --crimson: crimson;
+  --light-text: #ffffff;
+  --dark-text: #000000;
+  --dark-grey: #eee;
+  --dark: #000000;
+}
+
+@include angular-material-theme($my-theme);
+
+html,
+body {
+  height: 100%;
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+  // background-color: #f2f3f6;
+}
+
+@media (min-width: 641px) {
+  .desktop-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.subtitle-title {
+  color: var(--subtitle);
+  font-size: 12px !important;
+  white-space: break-spaces;
+}
+
+.img-size-parent {
+  height: 100px;
+  width: 100px;
+}
+
+.img-size-child {
+  height: 200px;
+  width: 100%;
+}
+
+.next-verticle-slide {
+  background: url(./assets/images/next.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  right: 50%;
+  transform: rotate(90deg);
+  bottom: -30px;
+}
+
+.prev-verticle-slide {
+  background: url(./assets/images/next.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background: url(../../../assets/images/nav-icon.png) 0px 0px no-repeat scroll; */
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: -30px;
+  left: 50px;
+  z-index: 99;
+  transform: rotate(-90deg);
+}
+
+.prev-horizontal-slide {
+  background: url(./assets/images/next.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background: url(../../../assets/images/nav-icon.png) 0px 0px no-repeat scroll; */
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 100px;
+  left: -10px;
+  z-index: 999;
+  transform: rotate(-180deg);
+}
+
+.next-horizontal-slide {
+  background: url(./assets/images/next.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 117px;
+  right: -11px;
+  z-index: 999;
+}
