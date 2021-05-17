@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsOverviewComponent } from './events/containers/events-overview/events-overview.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './reducers/product.reducer';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { EventCardComponent } from './shared/event-card/event-card.component';
 import { MaterialModule } from './material.module';
@@ -40,9 +39,6 @@ import { UniquePipe } from './pipe/unique.pipe';
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
     AlertModule,
-    StoreModule.forRoot({
-      event: reducer,
-    }),
     NoopAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

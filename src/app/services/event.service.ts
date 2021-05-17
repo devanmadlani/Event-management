@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Store} from '@ngrx/store';
-import * as ProductActions from './../actions/product.actions';
+import {BehaviorSubject} from 'rxjs';
 import {EventDetails, SubscribedEventDetails, UserDetails} from '../models/event.model';
 import * as allEventsJsonData from '../events/data/allEvents.json';
 
