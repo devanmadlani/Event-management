@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   constructor(public router: Router, private eventService: EventService) {
   }
   ngOnInit(): void {
-    this.eventService.allSubscribedEvents.subscribe(eventDetails => this.eventCount = eventDetails.length); // async pipe in html
+    this.eventService.allSubscribedEvents$.subscribe(eventDetails => this.eventCount = eventDetails.length); // async pipe in html
   }
 
   showSubscribedEventList(): void {

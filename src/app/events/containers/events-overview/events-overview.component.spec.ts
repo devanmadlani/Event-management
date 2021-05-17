@@ -42,10 +42,10 @@ describe('EventsOverviewComponent', () => {
   });
 
   it('should init all events', () => {
-    component.eventService.allEvents.subscribe(events => {
+    component.eventService.allEvents$.subscribe(events => {
       expect(component.allEvents.length > 0).toBeTruthy();
     });
-    component.eventService.allEvents.next(eventsMock);
+    component.eventService.allEvents$.next(eventsMock);
   });
 
   it('should navigate to subscription form on subscribe', () => {

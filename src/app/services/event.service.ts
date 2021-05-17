@@ -8,31 +8,31 @@ import * as allEventsJsonData from '../events/data/allEvents.json';
     providedIn: 'root'
 })
 export class EventService {
-    public allEvents: BehaviorSubject<EventDetails[]> = new BehaviorSubject<EventDetails[]>([]);
-    public allSubscribedEvents: BehaviorSubject<SubscribedEventDetails[]> = new BehaviorSubject<SubscribedEventDetails[]>([]);
+    public allEvents$: BehaviorSubject<EventDetails[]> = new BehaviorSubject<EventDetails[]>([]);
+    public allSubscribedEvents$: BehaviorSubject<SubscribedEventDetails[]> = new BehaviorSubject<SubscribedEventDetails[]>([]);
 
     subscribeToEvent(eventDetails: EventDetails, userDetails: UserDetails): void {
         eventDetails.isSubscribed = true;
-        const subscribedEventDetails: SubscribedEventDetails[] = this.allSubscribedEvents.getValue();
+        const subscribedEventDetails: SubscribedEventDetails[] = this.allSubscribedEvents$.getValue();
         subscribedEventDetails.push({eventDetails, ...userDetails});
-        this.allSubscribedEvents.next(subscribedEventDetails);
+        this.allSubscribedEvents$.next(subscribedEventDetails);
     }
 
     getEventDetailsById(eventId): EventDetails {
-        return this.allEvents.value.find((eventDetail) => (eventDetail.id === eventId));
+        return this.allEvents$.value.find((eventDetail) => (eventDetail.id === eventId));
     }
 
     removeSubscribedEvents(eventDetails: EventDetails) {
-        const data = this.allSubscribedEvents.value.filter((el) => el['eventDetails'].id !== eventDetails.id);
-        const updatedEventDetails: EventDetails[] = this.allEvents.value;
+        const data = this.allSubscribedEvents$.value.filter((el) => el['eventDetails'].id !== eventDetails.id);
+        const updatedEventDetails: EventDetails[] = this.allEvents$.value;
         const eventIndex = updatedEventDetails.findIndex((event) => event.id === eventDetails.id);
         updatedEventDetails[eventIndex].isSubscribed = false;
-        this.allEvents.next(updatedEventDetails);
-        this.allSubscribedEvents.next(data);
+        this.allEvents$.next(updatedEventDetails);
+        this.allSubscribedEvents$.next(data);
     }
 
     setAllEvents(): void {
-        if (this.allEvents.value.length > 1) {
+        if (this.allEvents$.value.length > 1) {
             return;
         }
         const eventsDetails: { events: EventDetails[] } = (allEventsJsonData as any).default;
@@ -42,7 +42,7 @@ export class EventService {
                 eventDate: new Date(obj.eventDate),
                 isSubscribed: false
             }));
-            this.allEvents.next(updatedEventsDetails);
+            this.allEvents$.next(updatedEventsDetails);
         }
 
     }

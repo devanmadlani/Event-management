@@ -17,11 +17,11 @@ describe('CartService', () => {
 
   it('should filter events by date', () => {
     service.subscribeToEvent(eventsMock[0], UserDetails);
-    expect(service.allSubscribedEvents.value.length).toBe(1);
+    expect(service.allSubscribedEvents$.value.length).toBe(1);
   });
 
   it('should return event details based on event id', () => {
-    service.allEvents.next(eventsMock);
+    service.allEvents$.next(eventsMock);
     const eventDetail = service.getEventDetailsById(eventsMock[0].id);
     expect(eventDetail.name).toBe('mock');
   });
@@ -30,9 +30,9 @@ describe('CartService', () => {
   it('should remove subscribed events', () => {
     service.subscribeToEvent(eventsMock[0], UserDetails);
     service.subscribeToEvent(eventsMock[1], UserDetails);
-    service.allEvents.next(eventsMock);
+    service.allEvents$.next(eventsMock);
     service.removeSubscribedEvents(eventsMock[1]);
-    expect(service.allSubscribedEvents.value.length).toBe(1);
+    expect(service.allSubscribedEvents$.value.length).toBe(1);
   });
 
 

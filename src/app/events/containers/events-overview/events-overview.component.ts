@@ -25,7 +25,7 @@ export class EventsOverviewComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.eventService.setAllEvents();
-    this.eventService.allEvents.pipe(takeUntil(this.#destory$)).subscribe(events => {
+    this.eventService.allEvents$.pipe(takeUntil(this.#destory$)).subscribe(events => {
       this.allEvents = events;
       this.filterValue = this.allEvents;
     });

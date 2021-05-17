@@ -1,8 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { EventDetails } from '../../models/event.model';
-import { EventService } from '../../services/event.service';
+
 
 
 @Component({
@@ -24,11 +21,11 @@ export class EventCardComponent implements OnInit {
 
   }
 
-  subscribeToEvent(event): void {
-    this.subscribeEventClick.emit(event.id);
+  subscribeToEvent(id): void {
+    this.subscribeEventClick.emit(id);
   }
 
-  unsubscribeEvent(event): void {
-    this.unsubscribeEventClick.emit(event.id);
+  unsubscribeEvent(id): void {
+    this.unsubscribeEventClick.emit(id);
   }
 }

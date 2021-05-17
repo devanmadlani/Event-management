@@ -13,7 +13,7 @@
   <button type="button" class="btn btn-outline-primary subscribe-button" [id]="eventDetails?.id" (click)="subscribeToEvent(eventDetails?.id)" *ngIf="!eventDetails?.isSubscribed">
     Subscribe
   </button>
-  <button type="button" class="btn btn-danger" (click)="unsubscribeEvent(eventDetails.id)" *ngIf="eventDetails?.isSubscribed">
+  <button type="button" class="btn btn-danger" (click)="unsubscribeEvent(eventDetails?.id)" *ngIf="eventDetails?.isSubscribed">
     Unsubscribe
   </button>
 </div>

@@ -1,4 +1,4 @@
-<div class="mini-event" *ngIf="eventService.allSubscribedEvents | async as eventDetials">
+<div class="mini-event" *ngIf="eventService.allSubscribedEvents$ | async as eventDetials">
     <mat-card *ngIf="eventDetials.length > 0" class="card-container">
         <div class="mini-product-card" *ngFor="let event of eventDetials">
             <div class="event-image-container">
