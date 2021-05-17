@@ -22,9 +22,9 @@ Click here for the demo -> [Event Management](https://devan-8fa66.firebaseapp.co
 
 
 
-Event Service - All the reusabe logic related to events are on the Event Service below are the list of functions.
+**Event Service** - All the reusabe logic related to events are on the Event Service below are the list of functions.
 
-subscribeToEvent() - this function is called when user subscribes to the event, the details are added on an behavior subject which is subscribed on all the components.
+**subscribeToEvent()** - this function is called when user subscribes to the event, the details are added on an behavior subject which is subscribed on all the components.
 
 **removeSubscribedEvents()** - Removes the selected event from the list of events subscribed, here allSubscribedEvents behavior subject is also updated
 
@@ -56,6 +56,13 @@ Run ng test to execute the unit tests via Karma ng test watch to watch the chang
 Add more unit test for Html
 
 Improve Notifications
+
+
+
+# e2e testing 
+ 
+![alt text](https://github.com/devanmadlani/Event-management/blob/main/src/assets/automation.gif?raw=true)
+
 
 
 
