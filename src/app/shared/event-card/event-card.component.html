@@ -10,10 +10,10 @@
       <span [class.sucess-add-cart]="isSucessButton" [class.sucess-add-cart-hide]="!isSucessButton">sucess</span>
     </div>
   </div>
-  <button type="button" class="btn btn-outline-primary subscribe-button"  (click)="subscribeToEvent(eventDetails)" (click)="save()" *ngIf="!eventDetails?.isSubscribed">
-  Subscribe
+  <button type="button" class="btn btn-outline-primary subscribe-button"  (click)="subscribeToEvent(eventDetails)" (click)="subscribeToEvent()" *ngIf="!eventDetails?.isSubscribed">
+    Subscribe
   </button>
-  <button type="button" class="btn btn-danger"  (click)="unsubscribeEvent(eventDetails)" (click)="save()" *ngIf="eventDetails?.isSubscribed">
+  <button type="button" class="btn btn-danger"  (click)="unsubscribeEvent(eventDetails)" (click)="unsubscribeEvent()" *ngIf="eventDetails?.isSubscribed">
     Unsubscribe
   </button>
 </div>

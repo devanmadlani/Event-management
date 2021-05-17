@@ -15,8 +15,6 @@ export class EventCardComponent implements OnInit {
   @Input() eventDetails;
   @Output() subscribeEventClick: EventEmitter<string> = new EventEmitter<string>();
   @Output() unsubscribeEventClick: EventEmitter<string> = new EventEmitter<string>();
-
-  loading = false;
   isSucessButton = false;
 
   constructor() {
