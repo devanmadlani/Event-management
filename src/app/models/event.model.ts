@@ -20,12 +20,19 @@ export interface EventDetails {
   name: string;
   description: string;
   category: string;
-  eventDate: string;
+  eventDate: Date | string;
   isSubscribed?: boolean;
 }
 
 export interface SubscribedEventDetails {
   eventDetails: EventDetails;
+  name: string;
+  gender: 'male' | 'female' | 'others';
+  email: string;
+  cityName: string;
+}
+
+export interface UserDetails {
   name: string;
   gender: 'male' | 'female' | 'others';
   email: string;

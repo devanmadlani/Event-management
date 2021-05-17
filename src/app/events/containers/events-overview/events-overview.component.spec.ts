@@ -68,24 +68,21 @@ describe('EventsOverviewComponent', () => {
 
   it('should filter events by text', () => {
     component.filterValue = eventsMock;
-    fixture.detectChanges();
     component.filterByText('mock');
     expect(component.allEvents[0].name).toBe('mock');
   });
-  //
-  // it('should filter events by date', () => {
-  //   component.filterValue = eventsMock;
-  //   fixture.detectChanges();
-  //   component.filterByDate('2021-04-08T12:00:00+0100');
-  //   expect(component.allEvents[0].name).toBe('mock');
-  // });
-  //
-  // it('should filter events by category', () => {
-  //   component.filterValue = eventsMock;
-  //   fixture.detectChanges();
-  //   component.filterByCategory('Marcomware');
-  //   expect(component.allEvents[0].name).toBe('test1');
-  // });
+
+  it('should filter events by date', () => {
+    component.filterValue = eventsMock;
+    component.filterByDate('2025-04-08T12:00:00+0100');
+    expect(component.allEvents.length).toBe(1);
+  });
+
+  it('should filter events by category', () => {
+    component.filterValue = eventsMock;
+    component.filterByCategory({target: {value: 'dummy category'}});
+    expect(component.allEvents.length).toBe(1);
+  });
 
 
 });

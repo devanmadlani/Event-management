@@ -7,12 +7,20 @@ export const eventsMock: EventDetails[] = [{
   category: 'text',
   description: 'test',
   isSubscribed: false,
-  eventDate: '2021-04-08T12:00:00+0100'
+  eventDate: '2025-04-08T12:00:00+0100'
 },
   {
     id: '2',
     name: 'test1',
     category: 'text1',
+    description: 'Marcomware',
+    isSubscribed: false,
+    eventDate: '2022-04-08T13:00:00+0100'
+  },
+  {
+    id: '2',
+    name: 'test1',
+    category: 'dummy category',
     description: 'Marcomware',
     isSubscribed: false,
     eventDate: '2022-04-08T13:00:00+0100'

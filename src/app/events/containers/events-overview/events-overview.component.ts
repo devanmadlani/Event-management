@@ -25,7 +25,6 @@ export class EventsOverviewComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.eventService.setAllEvents();
-
     this.eventService.allEvents.pipe(takeUntil(this.#destory$)).subscribe(events => {
       this.allEvents = events;
       this.filterValue = this.allEvents;
@@ -42,26 +41,26 @@ export class EventsOverviewComponent implements OnInit, OnDestroy{
   }
 
 
-  filterByText(value: string): void {
+  filterByText(textToFilter: string): void {
     this.filterDate = '';
     this.allEvents = this.filterValue;
-    this.allEvents = this.allEvents.filter(i => i.name.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.allEvents = this.allEvents.filter(i => i.name.toLowerCase().indexOf(textToFilter.toLowerCase()) !== -1);
   }
 
-  filterByDate(value: string): void {
+  filterByDate(dateToFilter: string): void {
     this.allEvents = this.filterValue;
-    this.allEvents = this.allEvents.filter(i => new Date(i.eventDate).getDate() === new Date(value).getDate());
+    this.allEvents = this.allEvents.filter(i => new Date(i.eventDate).getTime() === new Date(dateToFilter).getTime());
   }
 
-  filterByCategory(value): void {
+  filterByCategory(categoryToFilter): void {
     this.filterDate = '';
     this.allEvents = this.filterValue;
-    if (value.target.value !== '') {
-      this.allEvents = this.allEvents.filter(i => i.category.toLowerCase() === value.target.value.toLowerCase());
+    if (!!categoryToFilter.target.value) {
+      this.allEvents = this.allEvents.filter(i => i.category.toLowerCase() === categoryToFilter.target.value.toLowerCase());
     }
   }
 
-  sortData() {
+  sortData(): void {
     if (this.sortOrder) {
       this.allEvents = this.allEvents.sort((first: EventDetails, second: EventDetails) => (second.name > first.name ? -1 : 1));
     } else {

@@ -12,7 +12,7 @@ describe('PhoneNumberPipe Tests', () => {
     it('should transform array to unique list', () => {
       const transformedArray = uniquePipe.transform(eventsMock);
       console.log(transformedArray);
-      expect(transformedArray.length).toBe(2);
+      expect(transformedArray.length).toBe(3);
     });
   });
 

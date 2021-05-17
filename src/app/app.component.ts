@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EventService} from './services/event.service';
 import {Router} from '@angular/router';
 
@@ -7,14 +7,15 @@ import {Router} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'EventPlanner';
+export class AppComponent implements OnInit{
   eventCount = 0;
-  constructor(private eventService: EventService, public router: Router) {
-    this.eventService.allSubscribedEvents.subscribe(state => this.eventCount = state.length);
+  constructor(public router: Router, private eventService: EventService) {
+  }
+  ngOnInit(): void {
+    this.eventService.allSubscribedEvents.subscribe(eventDetails => this.eventCount = eventDetails.length); // async pipe in html
   }
 
-  showSubscribedEventList() {
-    this.router.navigate(['/subscribed-event']);
+  showSubscribedEventList(): void {
+    this.router.navigateByUrl('/subscribed-event');
   }
 }
