@@ -55,5 +55,10 @@ Run ng test to execute the unit tests via Karma ng test watch to watch the chang
 
 Add more unit test for Html
 
+Add more automation.
+
+Notifications
+
+
 
 
