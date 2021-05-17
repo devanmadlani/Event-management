@@ -2,26 +2,63 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Development server
+# Summary
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+App Displays list of upcoming events, users can subscribe to the event by filling the form
 
-## Code scaffolding
+# Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Click here for the demo -> [Event Management](https://devan-8fa66.firebaseapp.com/)
 
-## Build
+# App sturcture
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+**Event Overview Component** - this component contains the list of all the uncoming events with the filteration functionality
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Subscribed Event component** - Contains all the list all events that are subscribed by the users, uers can also unsubscribe to an event
 
-## Running end-to-end tests
+**Subscription form component** - Form is used to submit the details and also contains the description of the selected event.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Event Service - All the reusabe logic related to events are on the Event Service below are the list of functions.
+
+subscribeToEvent() - this function is called when user subscribes to the event, the details are added on an behavior subject which is subscribed on all the components.
+
+**removeSubscribedEvents()** - Removes the selected event from the list of events subscribed, here allSubscribedEvents behavior subject is also updated
+
+**setAllEvents()** - this function is called on load of the application, sets all the events that needs to be listed on the overview screen
+
+**getEventDetailsById()** - returns the event details based on the id.
+
+
+
+
+**Unique Pipe** - Unique pipe is used to convert an array to list unique items, this pipe is used on Event overview component to dilplay list of Category which chould unique elements on the Categoy filter dropdown 
+
+
+
+**Shared Folder** contains the reusable components like cards and list of events
+
+
+# Build
+
+Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
+
+
+# Running unit tests
+
+Run ng test to execute the unit tests via Karma ng test watch to watch the changes in the unit testing while you code them. This project will also generate the code coverage which is under coverage folder.
+
+# Can be improved
+
+Add more unit test for Html
+
+Add more automation.
+
+Notifications
+
+
+
+
