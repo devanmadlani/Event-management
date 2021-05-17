@@ -11,7 +11,7 @@
     <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Name:</label>
-        <input type="email" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name">
+        <input type="email" id="name" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name">
         <span class="text-danger"
               *ngIf="(userDetailsForm.controls.name.touched || submitted) && userDetailsForm.controls.name.errors?.required">
                                 <sup>*</sup>Name is required
@@ -36,6 +36,7 @@
                placeholder="Datepicker"
                class="form-control"
                bsDatepicker
+               id="date-picker"
                [bsValue]="bsValue"
                [daysDisabled]="[6,0]"
                formControlName="dateOfBirth"
@@ -79,7 +80,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+      <button type="submit" id="submit-form" class="btn btn-primary btn-lg btn-block">Submit</button>
     </form>
   </div>
 </div>

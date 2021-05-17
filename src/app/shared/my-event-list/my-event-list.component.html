@@ -3,7 +3,7 @@
         <div class="mini-product-card" *ngFor="let event of eventDetials">
             <div class="event-image-container">
 <!--                <img class="event-image" alt="" [src]="product.image.srcOut">-->
-              <button mat-icon-button (click)="removeFromevent(event.eventDetails)"  color="warn" class="delete-event-button">
+              <button id="delete-event" (click)="removeFromevent(event.eventDetails)"  color="warn" class="delete-event-button">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>
