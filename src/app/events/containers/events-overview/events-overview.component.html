@@ -25,10 +25,10 @@
   </div>
   <div class="event-filter">
     <div class="event-filter__block btn-block" (click)="sortDataByDate()">
-      <div>Date</div>
+     <button class="btn btn-outline-secondary" data-sort="none">Date<mat-icon *ngIf="sortByDate">keyboard_arrow_up</mat-icon><mat-icon *ngIf="!sortByDate">keyboard_arrow_down</mat-icon></button>
     </div>
     <div class="event-filter__block" (click)="sortData()">
-      A/Z
+      <button class="btn btn-outline-secondary" data-sort="none">A/Z <mat-icon *ngIf="sortOrder">keyboard_arrow_up</mat-icon><mat-icon *ngIf="!sortOrder">keyboard_arrow_down</mat-icon></button>
     </div>
   </div>
 
