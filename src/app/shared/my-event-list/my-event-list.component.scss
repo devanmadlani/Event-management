@@ -22,7 +22,7 @@
     border: 1px solid #ccc;
   }
   .card-desc {
-    max-width: 600px;
+    width: 600px;
     height: 100%;
     div, select {
       margin: 6px;
@@ -96,12 +96,14 @@
   .user-details {
     width: 350px;
     margin-top: 24px;
+    margin-left: 6px;
+    margin-bottom: 24px;
     @media (min-width: 801px) {
       margin-top: 10px;
       padding-left: 15px;
     }
   }
-  .card-container {
+  .card-container-details {
     border-bottom: 1px solid #ddd;
   }
 }
