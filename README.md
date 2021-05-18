@@ -11,17 +11,6 @@ App Displays list of upcoming events, users can subscribe to the event by fillin
 Click here for the demo -> [Event Management](https://devan-8fa66.firebaseapp.com/)
 
 
-# Build, Development, Running unit tests and Automation
-
-
-Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
-
-**Unit testing** Run ng test to execute the unit tests via Karma or ng test --watch to watch the changes in the unit testing while you code them. This project will also generate the code coverage.
-
-**Automation Testing** Run cypress open to execute the end-to-end tests via Cypress. The application shuld be running before executing Automation 
-
-
-
 
 # App sturcture
 
@@ -63,6 +52,14 @@ Run ng build to build the project. The build artifacts will be stored in the dis
 # Running unit tests
 
 Run ng test to execute the unit tests via Karma ng test watch to watch the changes in the unit testing while you code them. This project will also generate the code coverage which is under coverage folder.
+
+
+
+# Automation Testing 
+
+Run cypress open to execute the end-to-end tests via Cypress. The application shuld be running before executing Automation 
+
+
 
 # Can be improved
 
