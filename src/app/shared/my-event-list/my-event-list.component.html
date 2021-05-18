@@ -2,8 +2,7 @@
     <mat-card *ngIf="eventDetials.length > 0" class="card-container-details">
         <div class="mini-product-card card-container-details" *ngFor="let event of eventDetials">
             <div class="event-image-container">
-                <!--                <img class="event-image" alt="" [src]="product.image.srcOut">-->
-                <button mat-icon-button (click)="removeFromevent(event.eventDetails)"  color="warn" class="delete-event-button">
+                <button mat-icon-button (click)="removeFromevent(event.eventDetails)"  color="warn" class="delete-event-button" id="delete-event">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>
@@ -13,7 +12,7 @@
                     <div class="sub-title">{{event.eventDetails.name}}</div>
                     <div class="sub-title">{{event.eventDetails.description}}</div>
                     <div class="sub-title">{{event.eventDetails.category}}</div>
-                    <div class="sub-title">{{event.eventDetails.eventDate}}</div>
+                    <div class="sub-title">{{event.eventDetails.eventDate| date:'medium'}}</div>
                 </div>
                 <div class="user-details">
                     <div>Attendee Deails</div>
