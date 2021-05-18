@@ -5,9 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Summary
 
 Users can see all the upcoming events.
+
 User can filter events
+
 Users can subscribe to an events.
+
 User can unsubscribe to events
+
 User can see list of subscribed events
 
 
