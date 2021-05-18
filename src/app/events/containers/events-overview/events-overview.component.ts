@@ -49,7 +49,7 @@ export class EventsOverviewComponent implements OnInit, OnDestroy{
 
   filterByDate(dateToFilter: string): void {
     this.allEvents = this.filterValue;
-    this.allEvents = this.allEvents.filter(i => new Date(i.eventDate).getTime() === new Date(dateToFilter).getTime());
+    this.allEvents = this.allEvents.filter(i => new Date(i.eventDate).setHours(0,0,0,0) == new Date(dateToFilter).setHours(0,0,0,0));
   }
 
   filterByCategory(categoryToFilter): void {
