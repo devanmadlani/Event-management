@@ -1,20 +1,3 @@
-// export interface EventDetails {
-//   _id?: number;
-//   title: string;
-//   amount: number;
-//   date?: Date;
-//   subTitle?: string;
-//   currency?: 'rupee' | 'euro' | null;
-//   image?: EventImage;
-// }
-//
-// export interface EventImage {
-//   src: string;
-//   srcOut?: string;
-//   srcOn?: string;
-// }
-
-
 export interface EventDetails {
   id: string;
   name: string;
