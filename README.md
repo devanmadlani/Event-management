@@ -4,7 +4,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Summary
 
-App Displays list of upcoming events, users can subscribe to the event by filling the form
+Users can see all the upcoming events.
+
+User can filter events
+
+Users can subscribe to an events.
+
+User can unsubscribe to events
+
+User can see list of subscribed events
+
 
 # Demo
 
@@ -15,7 +24,7 @@ Click here for the demo -> [Event Management](https://devan-8fa66.firebaseapp.co
 # App sturcture
 
 
-**Event Overview Component** - this component contains the list of all the uncoming events with the filteration functionality
+**Event Overview Component** - this component contains the list of all the upcoming events with the filteration functionality
 
 **Subscribed Event component** - Contains all the list all events that are subscribed by the users, uers can also unsubscribe to an event
 
